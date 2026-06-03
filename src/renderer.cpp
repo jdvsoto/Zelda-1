@@ -108,22 +108,25 @@ void drawMainMenu(int selected) {
 
     // Triforce-style decoration
     attron(COLOR_PAIR(CP_COIN) | A_BOLD);
-    printCenter(8,  "      /\\       /\\", 0);
-    printCenter(9,  "     /  \\     /  \\", 0);
-    printCenter(10, "    /    \\   /    \\", 0);
-    printCenter(11, "   /------\\ /------\\", 0);
-    printCenter(12, "       /\\", 0);
-    printCenter(13, "      /  \\", 0);
-    printCenter(14, "     /    \\", 0);
-    printCenter(15, "    /------\\", 0);
+    printCenter(7,  "            /\\         ", 0);
+    printCenter(8,  "           /  \\        ", 0);
+    printCenter(9,  "          /    \\       ", 0);
+    printCenter(10, "         /      \\      ", 0);
+    printCenter(11, "         ---------     ", 0);
+    printCenter(12, "       /\\         /\\   ", 0);
+    printCenter(13, "      /  \\       /  \\  ", 0);
+    printCenter(14, "     /    \\     /    \\ ", 0);
+    printCenter(15, "    /      \\   /      \\", 0);
+    printCenter(16, "    --------- ---------", 0);
+
     attroff(COLOR_PAIR(CP_COIN) | A_BOLD);
 
     // Menu items
-    int menuStartRow = 8;
+    int menuStartRow = 18;
     int menuCol = (TERM_COLS - 22) / 2;
 
     for (int i = 0; i < N; i++) {
-        int row = menuStartRow + i * 2;
+        int row = menuStartRow + i;
         if (i == selected) {
             attron(COLOR_PAIR(CP_SEL) | A_BOLD);
             mvprintw(row, menuCol, "> %s <", ITEMS[i]);

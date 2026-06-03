@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wsl -e bash -c \"which g++ && g++ --version && dpkg -l libncurses-dev 2>&1 | tail -3\")",
+      "Bash(wsl -e bash -c \"dpkg -l | grep -i ncurses 2>&1\")"
+    ]
+  }
+}
